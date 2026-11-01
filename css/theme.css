@@ -1,0 +1,31 @@
+/* ============================================================
+   Wakefield Phoenix Netball Club — brand theme
+   ============================================================
+   Change the four colours below to re-theme the whole site.
+   Nothing else in the project needs to change — style.css
+   references these by name everywhere.
+
+   primary   = dominant brand colour (header, hero, footer)
+   secondary = light accent (wings, taglines, borders)
+   tertiary  = mid-tone used for buttons, links, tags
+   accent    = highlight colour for hover/emphasis states
+               (currently the same as tertiary — give it its
+               own value here if you ever want them to differ)
+   ============================================================ */
+
+/* If primary changes, also change the theme-color meta tag near the top
+   of each HTML page (it colours the phone's browser bar), which can't
+   read this file. */
+:root {
+  --color-primary:   #0B1F3D;
+  --color-secondary: #6FCCE7;
+  --color-tertiary:  #1F63AC;
+  --color-accent:    #1F63AC;
+
+  /* Derived shades — a darker tint of primary and a lighter
+     tint of secondary, used in a few specific spots. Only
+     change these if you want those specific spots to look
+     different from a simple lighten/darken of the colours above. */
+  --color-primary-deep:   #071527;
+  --color-secondary-soft: #C9EAF7;
+}

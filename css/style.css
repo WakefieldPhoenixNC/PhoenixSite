@@ -1,0 +1,1343 @@
+/* =========================================================
+   Wakefield Phoenix Netball Club — stylesheet
+   Palette pulled from the club crest.
+   ========================================================= */
+
+:root {
+  --navy: var(--color-primary);
+  --navy-deep: var(--color-primary-deep);
+  --ice: var(--color-secondary);
+  --ice-soft: var(--color-secondary-soft);
+  --cobalt: var(--color-tertiary);
+  --paper: #F4F8FB;
+  --white: #FFFFFF;
+  --ink: #10233F;
+  --ink-soft: #4C6079;
+
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius: 10px;
+  --max-width: 1280px;
+
+  /* Starts quickly and settles gently, so movement feels soft rather than
+     mechanical. Used by every hover, press and reveal on the site. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+
+/* Navy behind the page itself, which only shows where the page doesn't
+   cover: when a phone is pulled past the top or bottom of the page (it now
+   matches the header and footer instead of flashing pale), and for any
+   blank moment between pages. Each page's theme-color meta tag paints the
+   phone's browser bar the same navy. */
+html { scroll-behavior: smooth; background: var(--navy); }
+
+/* The delay reset matters for the staggered hero: without it, a delayed item
+   would sit invisible for a moment and then pop in, which is worse than
+   just appearing. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; animation-delay: 0s !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+img { max-width: 100%; display: block; }
+
+/* The hidden attribute always wins. Without this, any rule that sets display
+   (like display: flex on .team-sponsors) quietly overrides it, and something
+   the script hid, such as an empty "Team sponsors" heading, stays on screen. */
+[hidden] { display: none !important; }
+
+a { color: var(--cobalt); }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  line-height: 1.05;
+  margin: 0 0 0.5em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+/* ---------- Site header ---------- */
+
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 3px solid var(--ice);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.brand img {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: var(--ice);
+  text-transform: uppercase;
+}
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+nav.main-nav a:hover,
+nav.main-nav a[aria-current="page"] {
+  border-bottom-color: var(--ice);
+}
+
+/* Hamburger toggle — hidden on desktop, shown only under the breakpoint
+   below where the nav links no longer comfortably fit next to the logo. */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+
+  nav.main-nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    border-bottom: 3px solid var(--ice);
+    padding: 4px 24px 12px;
+  }
+
+  nav.main-nav.open ul {
+    display: flex;
+  }
+
+  nav.main-nav li {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  nav.main-nav a {
+    display: block;
+    padding: 14px 2px;
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  margin-bottom: 0.3em;
+}
+
+.hero p.tagline {
+  font-family: var(--font-mono);
+  color: var(--ice);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  max-width: 44ch;
+  margin: 0 auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* This 36px used to live on p.tagline's own margin-bottom, which meant it
+   applied on every hero even when there's no button row underneath — leaving
+   36px of dead space before the hero's bottom padding on pages like Kit and
+   Committee. Moving it here (scoped to the hero specifically, since
+   .hero-actions is also reused for the homepage's Instagram/Facebook row
+   outside the hero) means it only appears where there's actually something
+   below the tagline to space out from. */
+.hero .hero-actions {
+  margin-top: 36px;
+}
+
+/* ---------- Homepage hero (the club's banner artwork) ----------
+   Built from the social media designer's layered banner (6000 x 1875, the
+   same 16:5 shape as 1920 x 600). The background art sits behind the whole
+   hero; the crest + wordmark lockup is one image inside the h1 (its alt text
+   is the club name, so the heading still reads correctly for Google and
+   screen readers); the tagline and buttons stay live HTML, sized and
+   coloured the same as every other page's hero, not scaled to match the
+   artwork.
+
+   The lockup is sized to match her artwork's own ratio (35.867% of the
+   banner's width, its size in her 6000px file) so it looks like her design
+   at the resolution she was looking at it in — capped so it doesn't keep
+   growing past what looks reasonable on very wide monitors, and with a
+   floor so it doesn't disappear on narrow phones once the background
+   artwork (and the width scaling with it) drops out below 1200px.
+
+   The background is drawn at 100% of the hero's width, pinned to the bottom
+   (the waves bleed off the bottom corners, so the bottom edge must line up).
+   aspect-ratio makes the hero at least as tall as that image, so it's never
+   cropped. flex + align-items centres the actual content (logo/tagline/
+   buttons) in whatever height that leaves — needed because the content's
+   height isn't fixed (it reflows with the viewport), so a fixed padding
+   number is never reliably centred the way this is.
+
+   These rules sit after the general .hero rules on purpose: same
+   specificity, so being later in the file is what lets them win. */
+.hero-home {
+  --lockup-w: clamp(200px, 35.867vw, 700px);
+}
+
+/* Under about 1100px wide there's no longer a clear column between the plus
+   patterns and the centred text, so they'd run into the tagline (1200 keeps
+   a comfortable gap). Smaller screens get the plain navy hero instead, and
+   since the image is only referenced inside this query, they never download
+   it either. */
+@media (min-width: 1200px) {
+  .hero-home {
+    background: var(--navy) url('/images/hero-bg.png') center bottom / 100% auto no-repeat;
+    aspect-ratio: 16 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.hero-home h1 {
+  margin: 0 0 24px;
+  line-height: 0;
+}
+
+.hero-home h1 img {
+  width: var(--lockup-w);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Only the two-line break is custom (a \n in config/site-content.json,
+   rendered by pre-line) — colour, size and spacing all inherit the same
+   .hero p.tagline rule every other page uses. */
+.hero-home p.tagline {
+  white-space: pre-line;
+  max-width: none;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--ice);
+  color: var(--white);
+  background: transparent;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out), border-color 0.2s var(--ease-out), transform 0.15s var(--ease-out);
+  cursor: pointer;
+}
+
+.btn:hover { background: var(--ice); color: var(--navy-deep); }
+
+/* A slight press-in while a button is held down, so a tap or click feels
+   like it registered. */
+.btn:active,
+.tab-btn:active { transform: scale(0.96); }
+
+.btn.solid {
+  background: var(--ice);
+  color: var(--navy-deep);
+}
+
+.btn.solid:hover {
+  background: var(--white);
+}
+
+/* .btn's base colours (white text, ice border) are made for sitting on a navy
+   background, like the hero. This variant is for the same pill button used
+   on ordinary paper-coloured page content instead. */
+.btn.outline {
+  border-color: var(--cobalt);
+  color: var(--cobalt);
+}
+
+.btn.outline:hover {
+  background: var(--cobalt);
+  color: var(--white);
+}
+
+/* ---------- Sections ---------- */
+
+section.page-section {
+  padding: 64px 0;
+}
+
+section.page-section.alt {
+  background: var(--white);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto 40px;
+}
+
+.section-head h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+
+.section-head p { color: var(--ink-soft); }
+
+.about-photo {
+  margin: 0 auto 24px;
+  max-width: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.about-photo img { width: 100%; display: block; }
+
+.bib-body .card-link {
+  display: table;
+  margin: 14px auto 0;
+  padding: 9px 16px;
+  font-size: 0.72rem;
+  border-color: var(--cobalt);
+  color: var(--cobalt);
+  background: transparent;
+}
+
+.bib-body .card-link:hover { background: var(--cobalt); color: var(--white); }
+
+/* ---------- Bib badge (signature card component) ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+/* Senior team cards: two per row, wide enough for a real landscape team photo
+   (a group shot, not a headshot) rather than the squarer crop other cards use. */
+/* min(460px, 100%) rather than a bare 460px: on a phone narrower than that,
+   a hard 460px minimum forces the whole grid wider than the screen instead
+   of shrinking — this caps the minimum at "100% of the available width"
+   once the screen itself is the smaller of the two, so it shrinks to fit
+   instead of overflowing. Desktop keeps the original 2-per-row behaviour
+   since 460px stays smaller than 100% there. */
+#teams-grid { grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); }
+
+#teams-grid .bib-photo { aspect-ratio: 16 / 9; }
+
+#teams-grid .bib-body { text-align: center; }
+
+/* Portrait card grids (committee, and team player rosters) use flexbox rather
+   than the grid above — with a roster whose size varies a lot (and isn't a
+   multiple of any fixed column count), Grid's auto-fit can't centre a leftover
+   last row: the empty column tracks it leaves behind just sit there, left-
+   aligned. Flexbox with justify-content:center handles that natively, full
+   rows and partial ones alike. */
+.portrait-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 34px;
+}
+
+.portrait-grid .bib-photo { aspect-ratio: 3 / 4; }
+
+/* Kit photos are flat garment renders, landscape like the team photos rather
+   than portrait headshots — override the portrait-grid default just for them. */
+#kit-grid .bib-photo { aspect-ratio: 5 / 3; }
+#kit-grid.portrait-grid .bib-card { flex-basis: 340px; max-width: 400px; }
+
+.portrait-grid .bib-card {
+  flex: 1 1 250px;
+  max-width: 290px;
+}
+
+.bib-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(11, 31, 61, 0.12);
+  border: 1px solid rgba(11, 31, 61, 0.08);
+  position: relative;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+/* Subtle lift on hover — polish, not a "this is clickable" signal, so it's
+   kept light and applies to every card (team, committee, player) alike. */
+.bib-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(11, 31, 61, 0.16);
+}
+
+/* A card carrying a Captain/Vice-Captain badge needs its corner clip turned
+   off so the badge can hang over the edge (see .player-badge below) — but
+   overflow:hidden is also what keeps .bib-tag's square top corners looking
+   rounded to match the card, so that has to be replicated directly on the
+   tag once the parent stops clipping for it. */
+.bib-card.has-badge {
+  overflow: visible;
+}
+
+.bib-card.has-badge .bib-tag,
+.bib-card.has-badge .bib-photo {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.bib-tag {
+  background: var(--cobalt);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 7px 10px;
+}
+
+.bib-photo {
+  aspect-ratio: 4 / 3;
+  background: var(--ice-soft) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cobalt);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  position: relative;
+}
+
+.bib-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Captain / Vice-Captain marker — a patch styled after an actual captain's
+   armband: club-blue (not a departure from the site's palette this time —
+   the reference photo was itself a blue armband, so cobalt/navy reads truer
+   to it than an invented gold/silver did), pinned to the photo's own
+   top-right corner so it overlaps down into the picture — a rounded square,
+   not a stretched pill, with a bold outlined letter in the site's display
+   font (Anton) and faint horizontal ribbing standing in for woven-fabric
+   texture. Sits alongside the "(C)"/"(VC)" text on the name, not instead of
+   it — hover/focus shows the full word as a tooltip. */
+.player-badge {
+  position: absolute;
+  top: -16px;
+  right: -14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #FFFFFF;
+  background-repeat: repeat;
+  background-size: 100% 5px;
+  box-shadow: 0 2px 6px rgba(7, 21, 39, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: default;
+  z-index: 1;
+}
+
+.player-badge.captain {
+  background-color: var(--cobalt);
+  background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0px, rgba(255, 255, 255, 0.16) 1px, transparent 1px, transparent 5px);
+  -webkit-text-stroke: 1.4px var(--navy-deep);
+}
+
+.player-badge.vice-captain {
+  background-color: var(--navy);
+  background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0px, rgba(255, 255, 255, 0.16) 1px, transparent 1px, transparent 5px);
+  -webkit-text-stroke: 1.4px var(--ice);
+  /* Same font-size as .captain technically (checked) — "VC" just fills the
+     fixed-width box more tightly than a single "C" does, reading as bigger
+     even though it isn't. Shrunk slightly anyway, purely for breathing room. */
+  font-size: 1.55rem;
+}
+
+.bib-photo .no-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  padding: 0 12px;
+  letter-spacing: 0.06em;
+}
+
+.bib-photo .no-image-hint {
+  font-size: 0.65rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+}
+
+.bib-body {
+  padding: 18px 20px 22px;
+}
+
+.bib-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.15em;
+}
+
+.bib-body .role {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.bib-body p.bio {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Committee cards: name is the only text in the body, bigger and centred
+   to match the centred text in the bib-tag above it. */
+.bib-card.centered .bib-body {
+  text-align: center;
+  padding: 20px 16px 24px;
+}
+
+.bib-card.centered .bib-body h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* Player cards are centred like committee cards, but (unlike committee) also
+   show a position tag and bio — restore breathing room the name's margin:0
+   above removes, since committee names never have anything following them. */
+.bib-card.centered .bib-body p.bio {
+  margin-top: 8px;
+}
+
+/* Kit cards: the price is the whole point of the card, so it's pulled out of
+   the small uppercase "role" tag styling (normally a team's division) and
+   given its own pill-chip treatment — reads as a price tag rather than
+   competing with the item name above it for the same bold/heading look. */
+#kit-grid .bib-body .role {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  text-transform: none;
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+#kit-grid .kit-price-chip {
+  display: inline-block;
+  background: var(--ice-soft);
+  color: var(--navy);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+.bib-body .card-link.solid {
+  background: var(--cobalt);
+  color: var(--white);
+  border-color: var(--cobalt);
+}
+
+.bib-body .card-link.solid:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+/* ---------- Results / external link callout ---------- */
+
+.callout {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.callout h2 { color: var(--white); margin-bottom: 0.2em; font-size: 1.5rem; }
+
+.callout p { color: var(--ice-soft); margin: 0; max-width: 46ch; }
+
+/* ---------- Team tabs (senior / junior toggle) ---------- */
+
+.team-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.tab-btn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid var(--ice);
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), color 0.2s var(--ease-out), transform 0.15s var(--ease-out);
+}
+
+.tab-btn:hover { background: rgba(143, 209, 236, 0.15); }
+
+.tab-btn.active {
+  background: var(--ice);
+  color: var(--navy-deep);
+}
+
+/* ---------- Contact ---------- */
+
+.join-section { padding-top: 0; }
+
+.join-hero-card {
+  background: var(--ice);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.join-hero-card .eyebrow { color: var(--navy); }
+
+.join-hero-card h2 {
+  font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+  margin: 0.2em 0 0.35em;
+}
+
+.join-hero-card p {
+  color: var(--navy);
+  max-width: 46ch;
+  margin: 0 auto 26px;
+}
+
+.join-hero-card .btn.solid {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+  font-size: 0.92rem;
+  padding: 14px 30px;
+}
+
+.join-hero-card .btn.solid:hover {
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+  color: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+}
+
+@media (max-width: 760px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+form.enquiry-form label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+
+form.enquiry-form .field { margin-bottom: 20px; }
+
+form.enquiry-form input,
+form.enquiry-form select,
+form.enquiry-form textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1.5px solid #C7D4E2;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  background: var(--white);
+  color: var(--ink);
+}
+
+form.enquiry-form textarea { min-height: 130px; resize: vertical; }
+
+form.enquiry-form .field-hint {
+  margin: 6px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+form.enquiry-form input[type="file"] {
+  padding: 9px 10px;
+  font-size: 0.9rem;
+}
+
+/* The sponsorship form on the Sponsors page sits on its own white card,
+   centred, since unlike the contact page there's nothing beside it. */
+.form-card {
+  max-width: 680px;
+  margin: 8px auto 0;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 34px 34px 26px;
+  box-shadow: 0 10px 28px rgba(11, 31, 61, 0.08);
+}
+
+.form-card .btn.solid {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--white);
+}
+
+.form-card .btn.solid:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+/* Name and email side by side where there's room. */
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 18px;
+}
+
+@media (max-width: 600px) {
+  .field-row { grid-template-columns: 1fr; }
+  .form-card { padding: 26px 20px 20px; }
+}
+
+/* Contact page right-hand column: the sponsor pointer above the socials. */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-self: start;
+}
+
+.sponsor-callout {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 26px 28px 28px;
+}
+
+.sponsor-callout .eyebrow { color: var(--ice); }
+
+.sponsor-callout h3 {
+  color: var(--white);
+  font-size: 1.35rem;
+  margin: 6px 0 8px;
+}
+
+.sponsor-callout p {
+  color: var(--ice-soft);
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+}
+
+.social-panel {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid rgba(11, 31, 61, 0.08);
+}
+
+.social-panel h3 { font-size: 1.05rem; }
+
+.social-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--paper);
+  border: 1px solid rgba(11, 31, 61, 0.08);
+}
+
+.social-list a:hover { background: var(--ice-soft); }
+
+/* ---------- Footer ---------- */
+
+footer.site-footer {
+  background: var(--navy-deep);
+  color: var(--ice-soft);
+  padding: 34px 0;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer.site-footer a { color: var(--white); }
+
+/* Sponsor logos, one row per tier (club, then team, then individual). Logos
+   turn up in any shape, so each sits on its own white tile at a fixed height
+   with object-fit: contain: nothing gets cropped, and a wide wordmark and a
+   square badge still line up as the same size block. The white tile keeps
+   dark and coloured logos readable on the navy footer, which is most logos.
+   The one thing it can't save is an all-white logo, which disappears on a
+   white tile, hence the CMS hint asking for the colour or dark version.
+   Each tier's tile height is what makes a club sponsor visibly bigger than an
+   individual one. Flexbox wrapping means one sponsor sits centred on its own
+   and a dozen wrap onto tidy rows instead of squashing. */
+.sponsor-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.sponsor-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.sponsor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 10px 16px;
+  background: var(--white);
+  border-radius: var(--radius);
+}
+
+.sponsor img {
+  max-height: 100%;
+  max-width: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+.sponsor-row--club .sponsor { height: 78px; padding: 12px 20px; }
+.sponsor-row--club .sponsor img { max-width: 190px; }
+
+.sponsor-row--individual { gap: 10px; }
+.sponsor-row--individual .sponsor { height: 44px; padding: 7px 12px; }
+.sponsor-row--individual .sponsor img { max-width: 105px; }
+
+/* Only the clickable ones lift on hover, so the tickbox has a visible effect
+   and visitors can tell which logos go somewhere. */
+a.sponsor {
+  transition: transform 0.25s var(--ease-out);
+}
+
+a.sponsor:hover {
+  transform: translateY(-2px);
+}
+
+/* On a phone, full-size tiles are wide enough that wide wordmark logos end up
+   one per row, so a club with a lot of sponsors gets a very long footer.
+   Shrinking every tier keeps two (or more) side by side, and the club row
+   still stays the biggest. */
+@media (max-width: 720px) {
+  .sponsor { height: 50px; padding: 8px 12px; }
+  .sponsor img { max-width: 110px; }
+  .sponsor-row--club .sponsor { height: 62px; padding: 10px 14px; }
+  .sponsor-row--club .sponsor img { max-width: 130px; }
+  .sponsor-row--individual .sponsor { height: 40px; padding: 6px 10px; }
+  .sponsor-row--individual .sponsor img { max-width: 90px; }
+}
+
+/* ---------- Sponsors on team and player cards ---------- */
+
+/* A "Sponsored by" pill over the bottom edge of a card's photo. It lives
+   inside the photo, which is a fixed shape, so a sponsored card is exactly
+   the same height as an unsponsored one. Several logos (a team can have up
+   to four sponsors) wrap inside the pill rather than spilling out of it. */
+.photo-sponsor {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-sponsor-pill {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+  max-width: 100%;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(11, 31, 61, 0.18);
+}
+
+.photo-sponsor-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.photo-sponsor-logo {
+  display: flex;
+  align-items: center;
+}
+
+.photo-sponsor-logo img {
+  height: 32px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+/* Player cards are much narrower than team cards, so smaller logos there. */
+.portrait-grid .photo-sponsor-logo img {
+  height: 26px;
+  max-width: 100px;
+}
+
+/* Junior team cards (no photo): the sponsor strip sits at the bottom of the
+   card. The card becomes a column so the strip can be pushed to the bottom,
+   level across a row, whatever length each card's description is. */
+#junior-teams-grid .bib-card { display: flex; flex-direction: column; }
+#junior-teams-grid .bib-body { flex: 1; }
+
+.card-sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+  padding: 10px 14px;
+  border-top: 1px solid rgba(11, 31, 61, 0.08);
+  background: #F7FAFC;
+}
+
+.card-sponsors .photo-sponsor-logo img { height: 26px; max-width: 100px; }
+
+/* Team sponsors on a team's own players page, under the description. */
+.team-sponsors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: -16px auto 48px;
+}
+
+.team-sponsors .sponsor {
+  box-shadow: 0 0 0 1px rgba(11, 31, 61, 0.1), 0 6px 16px rgba(11, 31, 61, 0.06);
+}
+
+/* ---------- Sponsors page ---------- */
+
+/* Three tier cards side by side on desktop, stacked on a phone. Cards stretch
+   to the same height, and the availability line is pushed to the bottom of
+   each, so the "places left" lines always sit level however many benefits a
+   tier lists. The club tier is navy so the top tier reads as the premium one
+   without needing a "most popular" badge. */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 22px;
+  max-width: 1040px;
+  margin: 8px auto 0;
+  align-items: stretch;
+}
+
+.tier-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 28px 28px;
+  box-shadow: 0 10px 28px rgba(11, 31, 61, 0.08);
+  text-align: center;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+/* Same lift as the bib cards, so every card on the site reacts alike. */
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(11, 31, 61, 0.16);
+}
+
+.tier-name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin: 0;
+}
+
+.tier-price {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  line-height: 1.05;
+  color: var(--navy);
+  margin-top: 10px;
+}
+
+.tier-season {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+.tier-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  text-align: left;
+}
+
+.tier-benefits li {
+  position: relative;
+  padding: 10px 0 10px 26px;
+  border-top: 1px solid rgba(11, 31, 61, 0.08);
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.tier-benefits li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 17px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ice);
+}
+
+.tier-foot {
+  margin-top: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.tier-availability {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+}
+
+.tier-availability.is-full { color: var(--ink-soft); }
+
+/* On the white cards the ice "solid" button would barely stand out from the
+   card, so it's cobalt there; the navy club card keeps the ice version. */
+.tier-card .tier-cta {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--white);
+}
+
+.tier-card .tier-cta:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.tier-card--club { background: var(--navy); }
+.tier-card--club .tier-cta { background: var(--ice); border-color: var(--ice); color: var(--navy-deep); }
+.tier-card--club .tier-cta:hover { background: var(--white); border-color: var(--white); color: var(--navy-deep); }
+.tier-card--club .tier-name { color: var(--ice); }
+.tier-card--club .tier-price { color: var(--white); }
+.tier-card--club .tier-season { color: var(--ice-soft); }
+.tier-card--club .tier-benefits li { color: var(--white); border-top-color: rgba(255, 255, 255, 0.14); }
+.tier-card--club .tier-availability { color: var(--ice); }
+.tier-card--club .tier-availability.is-full { color: var(--ice-soft); }
+
+/* The thank-you wall reuses the footer's tier rows, so a club sponsor is
+   still the biggest. On the light page background the white tiles need an
+   outline to show where they end. */
+.sponsor-wall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.sponsor-wall-heading {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin: 18px 0 2px;
+}
+
+.sponsor-wall-heading:first-child { margin-top: 0; }
+
+.sponsor-wall .sponsor { box-shadow: 0 0 0 1px rgba(11, 31, 61, 0.1), 0 6px 16px rgba(11, 31, 61, 0.06); }
+
+/* ---------- Utility ---------- */
+
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-top: 12px;
+}
+
+.form-status.success { color: #1F8A45; }
+.form-status.error { color: #B3261E; }
+
+.loading-note {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 20px;
+}
+
+/* ---------- Back to top ---------- */
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cobalt);
+  color: var(--white);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(11, 31, 61, 0.35);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover { background: var(--navy); }
+
+/* ---------- Motion: page load and scroll reveals ---------- */
+
+/* Fades in while rising a short way. Only a "from" state, so each element
+   finishes on its own normal styles. It moves with `translate` rather than
+   `transform`, so it never fights the hover lift on cards, which uses
+   transform. */
+@keyframes rise-in {
+  from { opacity: 0; translate: 0 20px; }
+}
+
+/* The same movement under a second name, for scroll reveals. A card that
+   already played rise-in on load (and then went off screen and got hidden
+   for its reveal) only replays the movement if the name changes. */
+@keyframes reveal-rise {
+  from { opacity: 0; translate: 0 20px; }
+}
+
+/* Cards rise in one after another as a page opens, just as the junior
+   teams do when you switch tab. CSS only, so it starts with the page's very
+   first frame and never flashes. After the first five, the rest arrive
+   together; most of those are further down and get a scroll reveal anyway. */
+.card-grid > *,
+.tier-grid > * {
+  animation: rise-in 0.6s var(--ease-out) backwards;
+  animation-delay: calc(0.1s + var(--stagger, 0) * 70ms);
+}
+.card-grid > :nth-child(2), .tier-grid > :nth-child(2) { --stagger: 1; }
+.card-grid > :nth-child(3), .tier-grid > :nth-child(3) { --stagger: 2; }
+.card-grid > :nth-child(4) { --stagger: 3; }
+.card-grid > :nth-child(5) { --stagger: 4; }
+.card-grid > :nth-child(n+6) { --stagger: 5; }
+
+/* On a phone each card is nearly the full width of the screen, so a card
+   still waiting to rise in left a big pale gap under the hero, which read
+   as a white flash on every page. Phones get their cards straight away;
+   cards further down still rise in as they're scrolled to. */
+@media (max-width: 720px) {
+  .card-grid > *,
+  .tier-grid > * { animation: none; }
+}
+
+/* The homepage hero (crest, tagline, buttons) rises in one after another on
+   load. Homepage only: replaying an entrance on every page made moving
+   around the site feel slow. This is CSS only, so it plays even if the
+   script fails. "backwards" keeps each item hidden during its delay instead
+   of showing it and then snapping back to hidden. */
+.hero-home .wrap > * { animation: rise-in 0.7s var(--ease-out) backwards; }
+.hero-home .wrap > :nth-child(2) { animation-delay: 0.08s; }
+.hero-home .wrap > :nth-child(3) { animation-delay: 0.16s; }
+
+/* "Loading..." only appears if loading is genuinely slow. On a normal visit
+   the cards arrive first, so the note never flashes up and then vanishes. */
+.loading-note { animation: rise-in 0.3s var(--ease-out) 0.8s backwards; }
+
+/* Scroll reveals: js/main.js (initScrollReveal) adds .reveal to cards and
+   sections, then .in once each one scrolls into view. Only the script adds
+   .reveal, so with no JavaScript nothing is ever hidden. Screen only, so a
+   printed page never comes out with blank gaps. --reveal-delay staggers
+   items that arrive together. */
+@media screen {
+  .reveal:not(.in) { opacity: 0; }
+}
+
+.reveal.in { animation: reveal-rise 0.7s var(--ease-out) var(--reveal-delay, 0s) backwards; }

@@ -1,0 +1,43 @@
+{
+  "season": "2026/27",
+  "intro": "Sponsorship is vital to the success and sustainability of our club, helping us to provide opportunities for players to train, compete and develop in a safe and supportive environment. Your support contributes to the general running of the club, including equipment for training and matches, safeguarding and first-aid training for volunteers as required by England Netball, and essential coaching and venue fees.",
+  "tiers": [
+    {
+      "name": "Individual Player",
+      "tier": "individual",
+      "price": "£100",
+      "benefits": [
+        "Personalised Instagram and Facebook story",
+        "Your logo featured when your sponsored player is voted Player of the Match",
+        "Your logo in the footer of the club website"
+      ],
+      "limit": null,
+      "limitPerTeam": false
+    },
+    {
+      "name": "Team",
+      "tier": "team",
+      "price": "£250",
+      "benefits": [
+        "Personalised Instagram and Facebook story",
+        "Your logo on weekly match reports",
+        "Your logo in the footer of the club website"
+      ],
+      "limit": 4,
+      "limitPerTeam": true
+    },
+    {
+      "name": "Club",
+      "tier": "club",
+      "price": "£500",
+      "benefits": [
+        "Personalised Instagram and Facebook story",
+        "Your logo on weekly match reports and results",
+        "Your logo in the footer of the club website"
+      ],
+      "limit": 4,
+      "limitPerTeam": false
+    }
+  ],
+  "howText": "Pick the level you'd like to sponsor at and send us a quick enquiry. You can upload your logo with it, or send it to us later."
+}

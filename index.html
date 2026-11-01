@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3D">
+<title>Wakefield Phoenix Netball Club</title>
+<meta name="description" content="Wakefield Phoenix Netball Club — a netball club in Wakefield, West Yorkshire, with senior and junior teams. Meet the teams, meet the committee, and get in touch to join.">
+<link rel="icon" href="/images/logo.png" id="favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/theme.css?v=13">
+<link rel="stylesheet" href="/css/style.css?v=43">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  "name": "Wakefield Phoenix Netball Club",
+  "url": "https://wakefieldphoenixnc.co.uk",
+  "email": "wpnetballclub@gmail.com",
+  "sport": "Netball",
+  "areaServed": "West Yorkshire",
+  "sameAs": [
+    "https://www.instagram.com/wakefieldphoenixnc",
+    "https://www.facebook.com/WakefieldphoenixNC/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html">
+      <img src="/images/logo.png" alt="Wakefield Phoenix Netball Club crest" class="js-logo">
+      <span class="brand-text">Wakefield Phoenix<span>Netball Club</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav-list" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-nav-list">
+        <li><a href="/index.html" aria-current="page">Home</a></li>
+        <li><a href="/teams.html">Teams</a></li>
+        <li><a href="/committee.html">Committee</a></li>
+        <li><a href="/kit.html">Kit</a></li>
+        <li><a href="/sponsors.html">Sponsors</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero hero-home">
+  <div class="wrap">
+    <h1><img src="/images/hero-lockup.png" alt="Wakefield Phoenix Netball Club" width="1400" height="667" fetchpriority="high"></h1>
+    <p class="tagline" id="hero-tagline">Four senior teams. One club.<br>Rising every season in West Yorkshire netball.</p>
+    <div class="hero-actions">
+      <a class="btn solid" href="/teams.html">Meet the teams</a>
+      <a class="btn" href="/contact.html">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="page-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The club</span>
+      <h2 id="about-heading">Netball, done properly</h2>
+      <div id="about-photo" class="about-photo" hidden></div>
+      <p id="about-text">Wakefield Phoenix run four senior teams competing across the West Yorkshire netball leagues. Whatever your level, there's a squad here for you.</p>
+    </div>
+
+    <div class="callout">
+      <div>
+        <h2 id="results-heading">League tables &amp; results</h2>
+        <p id="results-text">Full fixtures, results and standings for every Phoenix team are published on the West Yorkshire Netball League site.</p>
+      </div>
+      <a class="btn solid js-results-link" href="https://www.westyorkshirenetball.co.uk/" target="_blank" rel="noopener">View results table</a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Follow along</span>
+      <h2 id="social-heading">Find us online</h2>
+      <p id="social-text">Match reports, training updates and club news, posted regularly.</p>
+    </div>
+    <div class="hero-actions">
+      <a class="btn solid js-instagram-link" href="https://www.instagram.com/wakefieldphoenixnc" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn solid js-facebook-link" href="https://www.facebook.com/WakefieldphoenixNC/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div id="sponsor-strip" class="sponsor-strip" hidden></div>
+    <p>Wakefield Phoenix Netball Club &middot; West Yorkshire &middot; <a href="/contact.html">Get in touch</a> &middot; <a href="/sponsors.html">Sponsor us</a></p>
+  </div>
+</footer>
+
+<!-- Netlify Identity: invite, password-reset and confirmation emails link to
+     this homepage with a token in the address (#invite_token=... and so on).
+     Only then is Netlify's login script loaded, to show the "set your
+     password" popup; every other visit skips its 240KB. The script starts
+     itself as soon as it loads, so a signed-in user is checked for directly
+     here, rather than by waiting for its "init" event, which has already
+     happened. Once a committee member signs in, they're sent to the CMS. -->
+<script>
+  if (/_token=/.test(location.hash)) {
+    const identityScript = document.createElement("script");
+    identityScript.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+    identityScript.onload = () => {
+      if (!window.netlifyIdentity.currentUser()) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    };
+    document.head.appendChild(identityScript);
+  }
+</script>
+
+<script src="/js/main.js?v=29"></script>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+</body>
+</html>

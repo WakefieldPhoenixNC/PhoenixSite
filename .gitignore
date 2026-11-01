@@ -1,0 +1,6 @@
+# Kept out of git. guide/ has personal contact details in it. _site/ is the
+# finished site that build.js makes, which Netlify builds fresh every deploy.
+brag-output*/
+guide/
+_site/
+.claude/

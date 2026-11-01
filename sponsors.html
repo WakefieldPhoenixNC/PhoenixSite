@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3D">
+<title>Sponsor Us — Wakefield Phoenix Netball Club</title>
+<meta name="description" content="Sponsor Wakefield Phoenix Netball Club: individual player, team and club sponsorship, what each includes, and how to get involved.">
+<link rel="icon" href="/images/logo.png" id="favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/theme.css?v=13">
+<link rel="stylesheet" href="/css/style.css?v=43">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html">
+      <img src="/images/logo.png" alt="Wakefield Phoenix Netball Club crest" class="js-logo">
+      <span class="brand-text">Wakefield Phoenix<span>Netball Club</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav-list" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/teams.html">Teams</a></li>
+        <li><a href="/committee.html">Committee</a></li>
+        <li><a href="/kit.html">Kit</a></li>
+        <li><a href="/sponsors.html" aria-current="page">Sponsors</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color: var(--ice);">Support the club</span>
+    <h1>Sponsor Us</h1>
+    <p class="tagline">Back the club, and get your business seen.</p>
+    <div class="hero-actions">
+      <a class="btn solid" href="#sponsor-form">Become a Sponsor</a>
+      <a class="btn" href="#tier-grid">See the Options</a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why it matters</span>
+      <h2>Where your money goes</h2>
+      <p id="sponsorship-intro">Sponsorship is vital to the success and sustainability of our club, helping us to provide opportunities for players to train, compete and develop in a safe and supportive environment. Your support contributes to the general running of the club, including equipment for training and matches, safeguarding and first-aid training for volunteers as required by England Netball, and essential coaching and venue fees.</p>
+    </div>
+
+    <div id="tier-grid" class="tier-grid">
+      <p class="loading-note">Loading sponsorship options…</p>
+    </div>
+  </div>
+</section>
+
+<section class="page-section alt" id="sponsor-form">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Become a sponsor</span>
+      <h2>Sponsorship Enquiry</h2>
+      <p id="sponsor-how-text">Pick the level you'd like to sponsor at and send us a quick enquiry. You can upload your logo with it, or send it to us later.</p>
+    </div>
+
+    <!-- Every field has to be here in the static HTML (some just hidden):
+         Netlify reads a form's fields when the site deploys, so a field only
+         added by JavaScript would be dropped from submissions. -->
+    <form class="enquiry-form form-card" name="sponsorship" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" id="sponsorship-form">
+      <input type="hidden" name="form-name" value="sponsorship">
+      <p class="visually-hidden" style="position:absolute; left:-9999px;">
+        <label>Don't fill this in if you're human: <input name="bot-field"></label>
+      </p>
+
+      <div class="field">
+        <label for="sp-tier">Sponsorship level</label>
+        <select id="sp-tier" name="level" required>
+          <option value="">Choose a level</option>
+          <option data-tier="individual">Individual Player</option>
+          <option data-tier="team">Team</option>
+          <option data-tier="club">Club</option>
+        </select>
+      </div>
+
+      <div class="field" id="sp-for-field" hidden>
+        <label for="sp-for" id="sp-for-label">Which team?</label>
+        <input type="text" id="sp-for" name="sponsoring">
+        <p class="field-hint" id="sp-for-hint" hidden>Player sponsorship is for our senior teams. Junior teams can be sponsored as a team.</p>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="sp-name">Your name</label>
+          <input type="text" id="sp-name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="sp-email">Email</label>
+          <input type="email" id="sp-email" name="email" autocomplete="email" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="sp-business">Business or sponsor name</label>
+        <input type="text" id="sp-business" name="business" autocomplete="organization" required>
+      </div>
+
+      <div class="field">
+        <label for="sp-website">Your website (optional)</label>
+        <input type="url" id="sp-website" name="website" placeholder="https://">
+        <p class="field-hint">So your logo can link to it on the club website.</p>
+      </div>
+
+      <div class="field">
+        <label for="sp-logo">Your logo (optional)</label>
+        <input type="file" id="sp-logo" name="logo" accept="image/png,image/svg+xml,image/jpeg,image/webp">
+        <p class="field-hint">Please use the full colour or dark version, not the white one. A PNG or SVG with a see-through or white background, at least 300px wide. No logo to hand? We can collect it later.</p>
+      </div>
+
+      <div class="field">
+        <label for="sp-message">Anything else? (optional)</label>
+        <textarea id="sp-message" name="message"></textarea>
+      </div>
+
+      <button class="btn solid" type="submit">Send Enquiry</button>
+      <p class="form-status" id="sponsorship-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="page-section" id="sponsor-wall-section" hidden>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Thank you</span>
+      <h2>Our Sponsors</h2>
+    </div>
+    <div id="sponsor-wall" class="sponsor-wall"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div id="sponsor-strip" class="sponsor-strip" hidden></div>
+    <p>Wakefield Phoenix Netball Club &middot; West Yorkshire &middot; <a href="/contact.html">Get in touch</a> &middot; <a href="/sponsors.html">Sponsor us</a></p>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=29"></script>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+</body>
+</html>

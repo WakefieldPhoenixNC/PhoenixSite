@@ -1,0 +1,7 @@
+{
+  "teams": [
+    { "name": "U16", "division": "Division 1", "description": "Team Description... EDIT IN CMS.", "showLeagueTable": true, "leagueTableUrl": "" },
+    { "name": "U14", "division": "Division 1", "description": "Team Description... EDIT IN CMS.", "showLeagueTable": true, "leagueTableUrl": "" },
+    { "name": "U12", "division": "Division 1", "description": "Team Description... EDIT IN CMS.", "showLeagueTable": true, "leagueTableUrl": "" }
+  ]
+}

@@ -1,0 +1,202 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Lets /admin work on your own machine for testing, with no login: run
+# serve.bat (which also starts the small "decap-server" this needs), then
+# open http://localhost:8080/admin/. Edits save straight into the files in
+# this folder. Only applies on localhost; the live site ignores it.
+local_backend: true
+
+# Uploaded photos land here and are referenced automatically in the JSON.
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "committee"
+    label: "Committee"
+    files:
+      - name: "committee"
+        label: "Committee Members"
+        file: "data/committee.json"
+        fields:
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            summary: "{{fields.role}} — {{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 900 × 1200px, portrait (a headshot or selfie works well) — it'll be cropped to that shape automatically." }
+              - { label: "Short bio", name: "bio", widget: "text", required: false }
+
+  - name: "teams"
+    label: "Teams"
+    files:
+      - name: "teams"
+        label: "Senior Teams"
+        file: "data/teams.json"
+        fields:
+          - label: "Teams"
+            name: "teams"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.division}}"
+            fields:
+              - { label: "Team name", name: "name", widget: "string" }
+              - { label: "Division / league", name: "division", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 1600 × 900px, landscape (a wide team/group photo works well) — it'll be cropped to that shape automatically." }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Show a league table button?", name: "showLeagueTable", widget: "boolean", required: false, default: false }
+              - { label: "League table link (only used if the box above is ticked)", name: "leagueTableUrl", widget: "string", required: false, hint: "Paste the exact West Yorkshire Netball results page URL for this team's division." }
+              - label: "Players"
+                name: "players"
+                widget: "list"
+                required: false
+                summary: "{{fields.name}} — {{fields.position}}"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Position(s)", name: "position", widget: "string", required: false, hint: "Write it however you like — e.g. \"C\", \"Centre\", or \"C / WD\" for someone who covers more than one." }
+                  - { label: "Captain?", name: "isCaptain", widget: "boolean", required: false, default: false, hint: "Adds a \"C\" armband badge to their photo, and (C) after their name." }
+                  - { label: "Vice-Captain?", name: "isViceCaptain", widget: "boolean", required: false, default: false, hint: "Adds a \"VC\" armband badge to their photo, and (VC) after their name." }
+                  - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 900 × 1200px, portrait (a headshot or selfie works well) — it'll be cropped to that shape automatically." }
+                  - { label: "About", name: "bio", widget: "text", required: false }
+
+  - name: "kit"
+    label: "Kit"
+    files:
+      - name: "kit"
+        label: "Kit"
+        file: "data/kit.json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Item name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 1000 × 600px, landscape — it'll be cropped to that shape automatically." }
+              - { label: "Adult price", name: "adultPrice", widget: "string", required: false, hint: "e.g. £45.61" }
+              - { label: "Junior price", name: "juniorPrice", widget: "string", required: false, hint: "Leave blank if this item only has one price." }
+          - { label: "Bundle / combo pricing note", name: "bundleNote", widget: "text", required: false, hint: "Optional — e.g. a discount for buying items together." }
+          - { label: "Small print (e.g. VAT/postage note)", name: "priceNote", widget: "string", required: false }
+          - { label: "Order enquiry — Google Form URL", name: "orderFormUrl", widget: "string", required: false, hint: "Leave blank to hide the order button until you have a form link." }
+
+  - name: "juniorTeams"
+    label: "Junior Teams"
+    files:
+      - name: "juniorTeams"
+        label: "Junior Teams"
+        file: "data/junior-teams.json"
+        fields:
+          - label: "Teams"
+            name: "teams"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.division}}"
+            fields:
+              - { label: "Team name", name: "name", widget: "string" }
+              - { label: "Division / league", name: "division", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Show a league table button?", name: "showLeagueTable", widget: "boolean", required: false, default: true }
+              - { label: "League table link", name: "leagueTableUrl", widget: "string", required: false, hint: "Paste the exact West Yorkshire Netball results page URL for this team's division. Fine to leave blank for now — the button still shows, it just won't go anywhere useful yet." }
+
+  - name: "sponsors"
+    label: "Sponsors"
+    files:
+      - name: "sponsorshipPage"
+        label: "Sponsorship page (tiers and prices)"
+        file: "data/sponsorship.json"
+        fields:
+          - { label: "Season", name: "season", widget: "string", required: false, hint: "Shown under each price, e.g. 2026/27. Leave blank to hide it." }
+          - { label: "Intro", name: "intro", widget: "text", hint: "The paragraph at the top of the Sponsors page explaining what sponsorship pays for." }
+          - label: "Tiers"
+            name: "tiers"
+            widget: "list"
+            summary: "{{fields.name}} ({{fields.price}})"
+            hint: "One card each on the Sponsors page, shown in this order."
+            fields:
+              - { label: "Name", name: "name", widget: "string", hint: "e.g. Club" }
+              - label: "Which sponsor tier is this?"
+                name: "tier"
+                widget: "select"
+                options:
+                  - { label: "Club", value: "club" }
+                  - { label: "Team", value: "team" }
+                  - { label: "Individual player", value: "individual" }
+                hint: "Must match the tier you pick on each sponsor, so the page can count how many places are taken."
+              - { label: "Price", name: "price", widget: "string", hint: "e.g. £500" }
+              - label: "What they get"
+                name: "benefits"
+                widget: "list"
+                field: { label: "Benefit", name: "benefit", widget: "string" }
+              - { label: "Maximum number of sponsors", name: "limit", widget: "number", value_type: "int", min: 1, required: false, hint: "Leave blank for no limit. When set, the card shows how many places are left, worked out automatically." }
+              - { label: "Is the limit per team?", name: "limitPerTeam", widget: "boolean", required: false, default: false, hint: "Tick for team sponsorship, where the limit applies to each team separately." }
+          - { label: "How to sponsor", name: "howText", widget: "text", required: false, hint: "The short paragraph in the 'Ready to get involved?' box." }
+
+      - name: "sponsors"
+        label: "Sponsor logos"
+        file: "data/sponsors.json"
+        fields:
+          - label: "Sponsors"
+            name: "sponsors"
+            widget: "list"
+            required: false
+            summary: "{{fields.name}} ({{fields.tier}})"
+            hint: "Sponsor logos show at the bottom of every page, biggest for club sponsors and smallest for individual ones. Leave this empty and nothing shows at all."
+            fields:
+              - { label: "Sponsor name", name: "name", widget: "string", hint: "Not shown on the page, but it's read out to visually impaired visitors and shows if the logo image fails to load." }
+              - label: "Sponsorship tier"
+                name: "tier"
+                widget: "select"
+                options:
+                  - { label: "Club", value: "club" }
+                  - { label: "Team", value: "team" }
+                  - { label: "Individual player", value: "individual" }
+                hint: "Decides how big the logo shows. Club logos are the largest, individual the smallest."
+              - label: "Which team?"
+                name: "team"
+                widget: "relation"
+                collection: "teams"
+                file: "teams"
+                value_field: "teams.*.name"
+                search_fields: ["teams.*.name"]
+                display_fields: ["teams.*.name"]
+                required: false
+                hint: "Senior teams. For a Team sponsor of a senior team, and for an Individual player sponsor (pick the player's team here, then the player below). Leave blank for Club sponsors."
+              - label: "Which junior team?"
+                name: "juniorTeam"
+                widget: "relation"
+                collection: "juniorTeams"
+                file: "juniorTeams"
+                value_field: "teams.*.name"
+                search_fields: ["teams.*.name"]
+                display_fields: ["teams.*.name"]
+                required: false
+                hint: "For a Team sponsor of a junior team, instead of 'Which team?' above. Up to 4 sponsors per team, junior teams included. Junior players can't be sponsored individually."
+              - label: "Which player?"
+                name: "player"
+                widget: "relation"
+                collection: "teams"
+                file: "teams"
+                value_field: "teams.*.players.*.name"
+                search_fields: ["teams.*.players.*.name"]
+                display_fields: ["teams.*.players.*.name"]
+                required: false
+                hint: "Individual player sponsors only (senior players), and pick their team above as well. Their logo shows on that player's photo. One sponsor per player: if two sponsors pick the same player, only the first one in this list shows on their card. If you rename a player, update this too."
+              - { label: "Logo", name: "logo", widget: "image", hint: "Any shape is fine, wide or square. Use the full colour or dark version of the logo, NOT the white one (a white logo won't show up). PNG with a see-through or white background, at least 300px wide, ideally under 200KB." }
+              - { label: "Make the logo clickable?", name: "isLink", widget: "boolean", required: false, default: false, hint: "Tick this to turn the logo into a link to the sponsor's own website." }
+              - { label: "Sponsor's website", name: "linkUrl", widget: "string", required: false, hint: "Only used if the box above is ticked." }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "siteLinks"
+        label: "Links & Logo"
+        file: "data/site-links.json"
+        fields:
+          - { label: "Club logo", name: "logo", widget: "image", required: false, hint: "Used in the header, homepage, and browser tab icon across every page." }
+          - { label: "Club email", name: "email", widget: "string", required: false, hint: "Shown on the Contact page. This doesn't change where the website's forms send their messages: that's set in Netlify." }
+          - { label: "Instagram URL", name: "instagramUrl", widget: "string", required: false }
+          - { label: "Facebook URL", name: "facebookUrl", widget: "string", required: false }
+          - { label: "League results table URL", name: "resultsUrl", widget: "string", required: false }
+          - { label: "Join the club — Google Form URL", name: "joinFormUrl", widget: "string", required: false, hint: "Link to the club's Google Form for new-player enquiries. Leave blank to hide the 'Enquire to Join' section on the contact page." }

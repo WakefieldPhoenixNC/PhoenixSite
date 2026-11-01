@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wakefield Phoenix — Site Admin</title>
+</head>
+<body>
+  <!-- Netlify Identity handles logins for the CMS -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Pinned to one exact version, with a fingerprint (integrity) the browser
+       checks before running it. This page can edit the whole site, so it
+       should only ever run the exact code that was tested. To upgrade, change
+       the version and replace the fingerprint (see README). -->
+  <script src="https://unpkg.com/decap-cms@3.17.1/dist/decap-cms.js" integrity="sha384-d2pbrhjc5asvSK35gKkrgRIk0Wq+2CQynWnXtSsYWQawXCgBXhcAK737jBAKXT4T" crossorigin="anonymous"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

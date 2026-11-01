@@ -1,0 +1,268 @@
+{
+  "teams": [
+    {
+      "name": "1st Team",
+      "division": "Premier Division",
+      "photo": "",
+      "description": "Team Description... EDIT IN CMS.",
+      "showLeagueTable": true,
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12835",
+      "players": [
+        {
+          "name": "Person Name",
+          "position": "GS",
+          "isCaptain": true,
+          "isViceCaptain": false,
+          "photo": "",
+          "bio": ""
+        },
+        {
+          "name": "Person Name",
+          "position": "GA",
+          "isCaptain": false,
+          "isViceCaptain": true,
+          "photo": "",
+          "bio": ""
+        },
+        {
+          "name": "Person Name",
+          "position": "WA",
+          "isCaptain": false,
+          "isViceCaptain": true,
+          "photo": "",
+          "bio": ""
+        },
+        {
+          "name": "Person Name",
+          "position": "C",
+          "photo": "",
+          "bio": "",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "WD",
+          "photo": "",
+          "bio": "",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GD",
+          "photo": "",
+          "bio": "",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GK",
+          "photo": "",
+          "bio": "",
+          "isViceCaptain": false,
+          "isCaptain": false
+        }
+      ]
+    },
+    {
+      "name": "2nd Team",
+      "division": "Division 3",
+      "photo": "",
+      "description": "Team Description... EDIT IN CMS.",
+      "showLeagueTable": true,
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12838",
+      "players": [
+        {
+          "name": "Person Name",
+          "position": "GS",
+          "isCaptain": true,
+          "isViceCaptain": false,
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio."
+        },
+        {
+          "name": "Person Name",
+          "position": "GA",
+          "isCaptain": false,
+          "isViceCaptain": true,
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio."
+        },
+        {
+          "name": "Person Name",
+          "position": "WA",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "C",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "WD",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GD",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GK",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        }
+      ]
+    },
+    {
+      "name": "3rd Team",
+      "division": "Division 5",
+      "photo": "",
+      "description": "Team Description... EDIT IN CMS.",
+      "showLeagueTable": true,
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12840",
+      "players": [
+        {
+          "name": "Person Name",
+          "position": "GS",
+          "isCaptain": true,
+          "isViceCaptain": false,
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio."
+        },
+        {
+          "name": "Person Name",
+          "position": "GA",
+          "isCaptain": false,
+          "isViceCaptain": true,
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio."
+        },
+        {
+          "name": "Person Name",
+          "position": "WA",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "C",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "WD",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GD",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isCaptain": false,
+          "isViceCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GK",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isCaptain": false,
+          "isViceCaptain": false
+        }
+      ]
+    },
+    {
+      "name": "4th Team",
+      "division": "Division 6",
+      "photo": "",
+      "description": "Team Description... EDIT IN CMS.",
+      "showLeagueTable": true,
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12841",
+      "players": [
+        {
+          "name": "Person Name",
+          "position": "GS",
+          "isCaptain": true,
+          "isViceCaptain": false,
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio."
+        },
+        {
+          "name": "Person Name",
+          "position": "GA",
+          "isCaptain": false,
+          "isViceCaptain": true,
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio."
+        },
+        {
+          "name": "Person Name",
+          "position": "WA",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "C",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "WD",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GD",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Person Name",
+          "position": "GK",
+          "photo": "",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isCaptain": false,
+          "isViceCaptain": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+# build.js writes the CMS content into every page and puts the finished site
+# in _site/, which is what gets published. The CMS still edits the files at
+# the top of the repo (data/*.json); each save triggers a new build.
+[build]
+  publish = "_site"
+  command = "node build.js"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    # No other site can show these pages inside a frame (stops "clickjacking",
+    # where a fake page lays invisible buttons over the real one).
+    X-Frame-Options = "SAMEORIGIN"
+    # Sites we link to (sponsors, league tables) see which site the visitor
+    # came from, but not the exact page.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # The site never needs the camera, microphone or location, so switch
+    # them off outright.
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Extra limits on what a page can be tricked into doing: no plugins, no
+    # changing where relative links point, and forms can only send to this
+    # site. Scripts and styles aren't restricted here, because the CMS and
+    # the login popup need scripts from Netlify and unpkg.
+    Content-Security-Policy = "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+
+# Uploaded images include SVG sponsor logos, and an SVG file can contain
+# script. Inside an <img> tag it never runs, but someone could link straight
+# to the file. This makes any file opened that way inert.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; sandbox"
+    # Netlify's default makes the browser check every image with Netlify
+    # again before showing it, on every page, so the logo and photos landed
+    # a moment after the rest of the page. This lets the browser reuse an
+    # image for an hour without asking, and after that keep showing its copy
+    # while it checks for a newer one in the background. A changed photo
+    # still shows up on the next visit.
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=604800"
+
+# Fetches the next page early in Chrome and Edge, when a visitor hovers over
+# (or starts tapping) a link, so it's already there when they click. Only
+# the page itself is fetched, nothing runs until they actually arrive. Other
+# browsers ignore it. The rules are in speculation-rules.json.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Speculation-Rules = "\"/speculation-rules.json\""
+
+[[headers]]
+  for = "/speculation-rules.json"
+  [headers.values]
+    Content-Type = "application/speculationrules+json"
+
+# CSS/JS are always loaded with a ?v= version tag (see README), so it's safe
+# to tell browsers to cache them for a full year — a version bump changes
+# the URL, which busts the cache automatically. Do NOT add this same
+# long/immutable caching to /images/* — logo.png and CMS-uploaded photos
+# have no equivalent versioning, so a long cache there would risk visitors
+# not seeing an updated photo for a long time after it's changed.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

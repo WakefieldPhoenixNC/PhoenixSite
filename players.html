@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3D">
+<title>Meet the Players — Wakefield Phoenix Netball Club</title>
+<meta name="description" content="Meet the players for each Wakefield Phoenix Netball Club senior team — squads, positions, and player info.">
+<link rel="icon" href="/images/logo.png" id="favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/theme.css?v=13">
+<link rel="stylesheet" href="/css/style.css?v=43">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html">
+      <img src="/images/logo.png" alt="Wakefield Phoenix Netball Club crest" class="js-logo">
+      <span class="brand-text">Wakefield Phoenix<span>Netball Club</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav-list" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/teams.html" aria-current="page">Teams</a></li>
+        <li><a href="/committee.html">Committee</a></li>
+        <li><a href="/kit.html">Kit</a></li>
+        <li><a href="/sponsors.html">Sponsors</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color: var(--ice);">Meet the Players</span>
+    <h1 id="team-name">&nbsp;</h1>
+    <p class="tagline" id="team-division"></p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="wrap">
+    <p style="text-align:center; margin-top:-24px;"><a class="btn outline" href="/teams.html">&larr; Return to Teams</a></p>
+
+    <div id="team-not-found" hidden>
+      <p class="loading-note">We couldn't find that team. <a href="/teams.html">Back to all teams</a>.</p>
+    </div>
+
+    <p id="team-description" style="max-width:60ch; margin:0 auto 48px; text-align:center; font-size:1.1rem; line-height:1.7; color:var(--ink-soft);"></p>
+
+    <div id="team-sponsors" class="team-sponsors" hidden>
+      <span class="eyebrow">Team sponsors</span>
+      <div id="team-sponsors-row" class="sponsor-row sponsor-row--team"></div>
+    </div>
+
+    <div id="team-players-section">
+      <div class="section-head">
+        <span class="eyebrow">The squad</span>
+        <h2>Meet the Players</h2>
+      </div>
+      <div id="team-players-grid" class="card-grid portrait-grid">
+        <p class="loading-note">Loading players…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div id="sponsor-strip" class="sponsor-strip" hidden></div>
+    <p>Wakefield Phoenix Netball Club &middot; West Yorkshire &middot; <a href="/contact.html">Get in touch</a> &middot; <a href="/sponsors.html">Sponsor us</a></p>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=29"></script>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+</body>
+</html>

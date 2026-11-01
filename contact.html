@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0B1F3D">
+<title>Contact — Wakefield Phoenix Netball Club</title>
+<meta name="description" content="Get in touch with Wakefield Phoenix Netball Club.">
+<link rel="icon" href="/images/logo.png" id="favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/theme.css?v=13">
+<link rel="stylesheet" href="/css/style.css?v=43">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/index.html">
+      <img src="/images/logo.png" alt="Wakefield Phoenix Netball Club crest" class="js-logo">
+      <span class="brand-text">Wakefield Phoenix<span>Netball Club</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav-list" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="main-nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/teams.html">Teams</a></li>
+        <li><a href="/committee.html">Committee</a></li>
+        <li><a href="/kit.html">Kit</a></li>
+        <li><a href="/sponsors.html">Sponsors</a></li>
+        <li><a href="/contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color: var(--ice);" id="contact-eyebrow">Say hello</span>
+    <h1>Get in Touch</h1>
+    <p class="tagline" id="contact-tagline">New players, opponents, sponsors. We'd love to hear from you.</p>
+  </div>
+</section>
+
+
+<!-- Shown from the start, so the page doesn't jump when it loads. The script
+     still swaps in the link from the CMS, and hides this box if that's blank. -->
+<section class="page-section join-section" id="join-callout">
+  <div class="wrap">
+    <div class="join-hero-card">
+      <span class="eyebrow" id="join-eyebrow">New players welcome</span>
+      <h2 id="join-heading">Want to Join Wakefield Phoenix?</h2>
+      <p id="join-text">Fill out our short enquiry form and a member of the committee will be in touch.</p>
+      <a class="btn solid" id="join-form-link" href="https://docs.google.com/forms/d/17Qja8X2LbkVculLRtt-US2LgiIlLDRjOtKOVGWhV-SY/viewform" target="_blank" rel="noopener">Enquire to Join &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 style="font-size:1.4rem;" id="query-heading">Send a Query</h2>
+      <p style="color:var(--ink-soft); margin-top:-8px;" id="query-text">Questions or club issues? Fill this in and it'll land straight in the club's inbox. Looking to join as a player? Use the "Enquire to Join" link instead.</p>
+
+      <form class="enquiry-form" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="enquiry-form">
+        <input type="hidden" name="form-name" value="enquiry">
+        <p class="visually-hidden" style="position:absolute; left:-9999px;">
+          <label>Don't fill this in if you're human: <input name="bot-field"></label>
+        </p>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label for="reason">What's this about?</label>
+          <select id="reason" name="reason">
+            <option>Fixtures / Results</option>
+            <option>Junior Teams</option>
+            <option>Club Issue</option>
+            <option>Something Else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button class="btn solid" type="submit" style="color: var(--navy-deep); border-color: var(--cobalt); background: var(--cobalt); color: var(--white);">Send query</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </div>
+
+    <div class="contact-side">
+      <div class="sponsor-callout">
+        <span class="eyebrow">Businesses</span>
+        <h3>Sponsor the Club</h3>
+        <p>Three sponsorship levels for local businesses and supporters. See what each includes and send us an enquiry in a couple of minutes.</p>
+        <a class="btn solid" href="/sponsors.html#sponsor-form">Become a Sponsor &rarr;</a>
+      </div>
+
+      <div class="social-panel">
+        <h3 id="find-us-heading">Find us elsewhere</h3>
+        <ul class="social-list">
+          <li><a class="js-email-link" href="mailto:wpnetballclub@gmail.com">wpnetballclub@gmail.com</a></li>
+          <li><a class="js-instagram-link" href="https://www.instagram.com/wakefieldphoenixnc" target="_blank" rel="noopener">Instagram →</a></li>
+          <li><a class="js-facebook-link" href="https://www.facebook.com/WakefieldphoenixNC/" target="_blank" rel="noopener">Facebook →</a></li>
+          <li><a class="js-results-link" href="https://www.westyorkshirenetball.co.uk/" target="_blank" rel="noopener">West Yorkshire League Table →</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div id="sponsor-strip" class="sponsor-strip" hidden></div>
+    <p>Wakefield Phoenix Netball Club &middot; West Yorkshire &middot; <a href="/contact.html">Get in touch</a> &middot; <a href="/sponsors.html">Sponsor us</a></p>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=29"></script>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+</body>
+</html>

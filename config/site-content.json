@@ -1,0 +1,30 @@
+{
+  "homepage": {
+    "heroTagline": "{{team_count}} senior teams. One club.\nRising every season in West Yorkshire netball.",
+    "aboutHeading": "Netball, done properly",
+    "aboutText": "Wakefield Phoenix run {{team_count}} senior teams competing across the West Yorkshire netball leagues. Whatever your level, there's a squad here for you.",
+    "aboutPhoto": "",
+    "resultsHeading": "League tables & results",
+    "resultsText": "Full fixtures, results and standings for every Phoenix team are published on the West Yorkshire Netball League site.",
+    "socialHeading": "Find us online",
+    "socialText": "Match reports, training updates and club news, posted regularly."
+  },
+  "teamsPage": {
+    "eyebrow": "Senior & junior teams",
+    "tagline": "{{team_count}} squads, each with their own place in the West Yorkshire leagues."
+  },
+  "committeePage": {
+    "eyebrow": "Behind the club",
+    "tagline": "The volunteers who keep Wakefield Phoenix running."
+  },
+  "contactPage": {
+    "eyebrow": "Say hello",
+    "tagline": "New players, opponents, sponsors. We'd love to hear from you.",
+    "queryHeading": "Send a Query",
+    "queryText": "Questions or club issues? Fill this in and it'll land straight in the club's inbox. Looking to join as a player? Use the \"Enquire to Join\" link instead.",
+    "joinEyebrow": "New players welcome",
+    "joinHeading": "Want to Join Wakefield Phoenix?",
+    "joinText": "Fill out our short enquiry form and a member of the committee will be in touch.",
+    "socialHeading": "Find us elsewhere"
+  }
+}

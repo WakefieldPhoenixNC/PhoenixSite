@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "name": "Sub Dress",
+      "description": "The club's playing dress, navy and royal blue sublimated design with a V-neck and standard back fit.",
+      "photo": "/images/uploads/kit-sub-dress.png",
+      "adultPrice": "£45.61",
+      "juniorPrice": "£36.47"
+    },
+    {
+      "name": "Retro Fleece Quarter Zip",
+      "description": "A navy, royal, and white quarter-zip fleece with an embroidered crest, unisex, relaxed oversized fit.",
+      "photo": "/images/uploads/kit-quarter-zip.png",
+      "adultPrice": "£40.86",
+      "juniorPrice": ""
+    }
+  ],
+  "bundleNote": "",
+  "priceNote": "Prices include VAT and a share of postage across the order.",
+  "orderFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSflGC0axBVJ-R05LkP4AuMxD5pBFluk0KHvuIBL23Bt7vP3pA/viewform?usp=publish-editor"
+}
