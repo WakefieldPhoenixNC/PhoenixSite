@@ -219,7 +219,7 @@ const SITE_TEXT_IDS = {
   contactPage: { eyebrow: 'contact-eyebrow', tagline: 'contact-tagline', queryHeading: 'query-heading', queryText: 'query-text', joinEyebrow: 'join-eyebrow', joinHeading: 'join-heading', joinText: 'join-text', socialHeading: 'find-us-heading' }
 };
 
-function siteTextFills(content, teamCount) {
+function siteTextFills(content, teamCount, img) {
   const fills = [];
   Object.entries(SITE_TEXT_IDS).forEach(([section, ids]) => {
     const settings = content[section] || {};
@@ -228,7 +228,7 @@ function siteTextFills(content, teamCount) {
     });
   });
   const photo = (content.homepage || {}).aboutPhoto;
-  if (photo) fills.push({ id: 'about-photo', html: `<img src="${escapeHtml(photo)}" alt="" loading="lazy">`, hidden: false });
+  if (photo) fills.push({ id: 'about-photo', html: `<img src="${escapeHtml(img(photo, 840))}" alt="" loading="lazy">`, hidden: false });
   return fills;
 }
 
@@ -236,10 +236,10 @@ function siteTextFills(content, teamCount) {
 // than once on a page (logo, socials) are found by class, so every copy
 // updates together. If the file can't load, the links already in the HTML
 // stay as they are.
-function siteLinkFills(links) {
+function siteLinkFills(links, img) {
   if (!links) return [];
   const fills = [];
-  if (links.logo) fills.push({ cls: 'js-logo', attrs: { src: links.logo } }, { id: 'favicon', attrs: { href: links.logo } });
+  if (links.logo) fills.push({ cls: 'js-logo', attrs: { src: img(links.logo, 120) } }, { id: 'favicon', attrs: { href: links.logo } });
   if (links.email) fills.push({ cls: 'js-email-link', text: links.email, attrs: { href: safeUrl(`mailto:${links.email}`) } });
   if (links.instagramUrl) fills.push({ cls: 'js-instagram-link', attrs: { href: safeUrl(links.instagramUrl) } });
   if (links.facebookUrl) fills.push({ cls: 'js-facebook-link', attrs: { href: safeUrl(links.facebookUrl) } });
@@ -457,16 +457,26 @@ const DATA_FILES = {
 // teamSlug says which team a players page is for, and playersHref makes the
 // link from a team card to its players page (build.js gives each team its
 // own finished page; the raw files use players.html?team=...).
-function contentFills(data, { has = () => false, teamSlug = '', playersHref = slug => `/players.html?team=${encodeURIComponent(slug)}` } = {}) {
-  const teams = data.teams ? (data.teams.teams || []) : null;
-  const sponsors = ((data.sponsors && data.sponsors.sponsors) || []).filter(sp => sp.logo);
+// imageUrl(src, width) gives the address each photo is shown from. build.js
+// points photos at Netlify's image resizing; otherwise they're used as is.
+// The widths are about twice each photo's size on the page, so they stay
+// sharp on high-resolution screens.
+function contentFills(data, { has = () => false, teamSlug = '', playersHref = slug => `/players.html?team=${encodeURIComponent(slug)}`, imageUrl = src => src } = {}) {
+  const img = (src, width) => (src ? imageUrl(src, width) : src);
+  const withPhoto = (item, width) => ({ ...item, photo: img(item.photo, width) });
+  const teams = data.teams
+    ? (data.teams.teams || []).map(t => ({ ...withPhoto(t, 1200), players: (t.players || []).map(p => withPhoto(p, 600)) }))
+    : null;
+  const committee = data.committee ? { ...data.committee, members: (data.committee.members || []).map(m => withPhoto(m, 600)) } : null;
+  const kit = data.kit ? { ...data.kit, items: (data.kit.items || []).map(i => withPhoto(i, 800)) } : null;
+  const sponsors = ((data.sponsors && data.sponsors.sponsors) || []).filter(sp => sp.logo).map(sp => ({ ...sp, logo: img(sp.logo, 400) }));
   return [
-    ...siteTextFills(data.content || {}, teams ? teams.length : null),
-    ...siteLinkFills(data.links),
-    ...committeeFills(data.committee),
+    ...siteTextFills(data.content || {}, teams ? teams.length : null, img),
+    ...siteLinkFills(data.links, img),
+    ...committeeFills(committee),
     ...teamsFills(teams, sponsors, playersHref),
     ...juniorTeamsFills(data.juniorTeams, sponsors),
-    ...kitFills(data.kit),
+    ...kitFills(kit),
     ...(has('team-players-grid') ? teamDetailFills(teams, sponsors, teamSlug) : []),
     ...sponsorFills(sponsors, has('sponsor-wall')),
     ...sponsorshipFills(data.sponsorship, sponsors, data.teams, data.juniorTeams)

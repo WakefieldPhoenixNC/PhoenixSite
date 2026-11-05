@@ -126,15 +126,18 @@ site updates within about a minute. Netlify runs `node build.js` and publishes
 Git Gateway login is already configured, invite-only — new committee editors
 are added via the Netlify dashboard → **Identity → Invite users**.
 
-**Free tier credits:** Netlify's free plan runs on a monthly credit
-allowance that resets automatically at no cost — a production deploy costs
-15 credits, bandwidth/requests use the rest. Ordinary usage (occasional CMS
-edits, modest visitor traffic) sits comfortably inside the monthly
-allowance; it's really only a spike of many deploys in a short window (active
-development, testing lots of changes back to back) that can use it up before
-the reset. If deploys ever pause with a "running on operational credits"
-message, that's what's happened — the site stays live either way, it just
-waits for the next reset (or an upgrade) before publishing anything new.
+**Free tier credits:** Netlify's free plan has 300 credits a month, a hard
+limit that resets each billing cycle. A production deploy (every CMS Publish
+or push) costs 15, and bandwidth and requests use the rest. When the credits
+run out, deploys stop but the site stays online ("running on operational
+credits"); Netlify's docs say that if the balance is used up completely, the
+site shows "Site not available" and forms stop until the next cycle. The free
+plan can't buy more credits, only upgrade.
+
+**Photos:** on Netlify, `build.js` serves every CMS photo through Netlify's
+image resizing (`/.netlify/images?url=...&w=...`) at about twice its size on
+the page, so full-size phone photos are fine to upload and the originals stay
+untouched in `images/uploads`. Local previews use the original files.
 
 **Domain:** the free `*.netlify.app` address works indefinitely. A custom
 domain (e.g. `wakefieldphoenixnetball.co.uk`, roughly £8–15/year) is

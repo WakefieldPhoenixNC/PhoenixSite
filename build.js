@@ -21,6 +21,15 @@ const { contentFills, escapeHtml, slugify, DATA_FILES } = require('./js/main.js'
 
 const OUT = '_site';
 
+// On Netlify, photos from the CMS are served through Netlify's image
+// resizing, at about twice the size they're shown, so full-size phone photos
+// still load quickly and the originals stay untouched. A local build keeps
+// the original files, because the resizing only exists on Netlify.
+const ON_NETLIFY = process.env.NETLIFY === 'true';
+const imageUrl = (src, width) => (ON_NETLIFY && /^\/images\/.+\.(jpe?g|png|webp|gif|avif)$/i.test(src)
+  ? `/.netlify/images?url=${encodeURIComponent(src)}&w=${width}`
+  : src);
+
 // Files in the repo that aren't part of the website. Everything else is
 // published as it is.
 const NOT_PUBLISHED = new Set([
@@ -78,6 +87,7 @@ function buildPage(html, options = {}) {
   const fills = contentFills(data, {
     has: id => html.includes(`id="${id}"`),
     playersHref: slug => `/players/${slug}.html`,
+    imageUrl,
     ...options
   });
   // data-built tells main.js the content is already in the page.
