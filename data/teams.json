@@ -187,7 +187,7 @@
           "position": "GS",
           "isCaptain": false,
           "isViceCaptain": false,
-          "photo": "",
+          "photo": "/images/uploads/wakefield-phoenix-posts.jpg",
           "bio": ""
         },
         {
@@ -249,7 +249,8 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "name": "Grace Milner",
-          "position": "C"
+          "position": "C",
+          "photo": "/images/uploads/wakefield-phoenix-posts.jpg"
         },
         {
           "isCaptain": false,
