@@ -3,264 +3,368 @@
     {
       "name": "1st Team",
       "division": "Premier Division",
-      "photo": "",
-      "description": "Team Description... EDIT IN CMS.",
+      "photo": "/images/uploads/1st-team.jpg",
+      "description": "Big energy. Fierce competition. Unstoppable team spirit.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12835",
       "players": [
         {
-          "name": "Person Name",
+          "name": "Kelsie Clune",
           "position": "GS",
-          "isCaptain": true,
+          "isCaptain": false,
           "isViceCaptain": false,
-          "photo": "",
+          "photo": "/images/uploads/1st-team-kelsie-clune.jpg",
           "bio": ""
         },
         {
-          "name": "Person Name",
+          "name": "Katy Potts",
           "position": "GA",
           "isCaptain": false,
-          "isViceCaptain": true,
-          "photo": "",
+          "isViceCaptain": false,
+          "photo": "/images/uploads/1st-team-katy-potts.jpg",
           "bio": ""
         },
         {
-          "name": "Person Name",
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Taylor Booth",
+          "position": "GA",
+          "photo": "/images/uploads/1st-team-taylor-booth.jpg"
+        },
+        {
+          "name": "Molly Whittaker",
           "position": "WA",
           "isCaptain": false,
-          "isViceCaptain": true,
-          "photo": "",
+          "isViceCaptain": false,
+          "photo": "/images/uploads/1st-team-molly-whittaker.jpg",
           "bio": ""
         },
         {
-          "name": "Person Name",
-          "position": "C",
-          "photo": "",
+          "name": "Emily Garner",
+          "position": "WA / C",
+          "photo": "/images/uploads/1st-team-emily-garner.jpg",
           "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
+          "name": "Charlotte Ellis",
+          "position": "WA / C",
+          "photo": "/images/uploads/1st-team-charlotte-ellis.jpg",
+          "bio": "",
+          "isViceCaptain": false,
+          "isCaptain": true
+        },
+        {
+          "name": "Bethan Gagen",
+          "position": "WA / C",
+          "photo": "/images/uploads/1st-team-bethan-gagen.jpg",
+          "bio": "",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Danika Kapp",
           "position": "WD",
-          "photo": "",
+          "photo": "/images/uploads/1st-team-danika-kapp.jpg",
           "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Charlie Davison-Ward",
           "position": "GD",
-          "photo": "",
-          "bio": "",
-          "isViceCaptain": false,
-          "isCaptain": false
+          "photo": "/images/uploads/1st-team-charley-davison-ward.jpg"
         },
         {
-          "name": "Person Name",
-          "position": "GK",
-          "photo": "",
-          "bio": "",
+          "isCaptain": false,
           "isViceCaptain": false,
-          "isCaptain": false
+          "name": "Sally Beckett",
+          "position": "GK",
+          "photo": "/images/uploads/1st-team-sally-cartwright.jpg"
         }
       ]
     },
     {
       "name": "2nd Team",
       "division": "Division 3",
-      "photo": "",
-      "description": "Team Description... EDIT IN CMS.",
+      "photo": "/images/uploads/2nd-team.jpg",
+      "description": "Strong connections. Big ambitions. All-out determination.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12838",
       "players": [
         {
-          "name": "Person Name",
+          "name": "Anisha Barmade",
           "position": "GS",
-          "isCaptain": true,
+          "isCaptain": false,
           "isViceCaptain": false,
-          "photo": "",
+          "photo": "/images/uploads/2nd-team-anisha-barmade.jpg",
           "bio": "Edit this in the CMS to add a bio."
         },
         {
-          "name": "Person Name",
+          "name": "Natalie Morris",
           "position": "GA",
           "isCaptain": false,
-          "isViceCaptain": true,
-          "photo": "",
+          "isViceCaptain": false,
+          "photo": "/images/uploads/2nd-team-tilly-morris.jpg",
           "bio": "Edit this in the CMS to add a bio."
         },
         {
-          "name": "Person Name",
+          "name": "Mollie Martin",
+          "position": "GS",
+          "photo": "/images/uploads/2nd-team-mollie-martin.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": true
+        },
+        {
+          "name": "Eleanor Platt",
           "position": "WA",
-          "photo": "",
+          "photo": "/images/uploads/2nd-team-eleanor-platt.jpg",
           "bio": "Edit this in the CMS to add a bio.",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
+          "name": "Nat Cudworth",
+          "position": "WA / WD",
+          "photo": "/images/uploads/2nd-team-nat-cudworth.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Naomi Hampshire",
           "position": "C",
-          "photo": "",
+          "photo": "/images/uploads/2nd-team-naomi-hampshire.jpg",
           "bio": "Edit this in the CMS to add a bio.",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
-          "position": "WD",
-          "photo": "",
+          "name": "Izzy Lindley",
+          "position": "WD / GD",
+          "photo": "/images/uploads/2nd-team-izzy-lindley.jpg",
           "bio": "Edit this in the CMS to add a bio.",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Maddy D-Brown",
+          "position": "GD / GK",
+          "photo": "/images/uploads/2nd-team-maddie-dickinson.jpg"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Kelsey Walker",
           "position": "GD",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
-          "isViceCaptain": false,
-          "isCaptain": false
+          "photo": "/images/uploads/2nd-team-kelsy-walker.jpg"
         },
         {
-          "name": "Person Name",
-          "position": "GK",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
+          "isCaptain": false,
           "isViceCaptain": false,
-          "isCaptain": false
+          "name": "Becky Greaves",
+          "position": "GK / GD",
+          "photo": "/images/uploads/2nd-team-becky-greaves.jpg"
         }
       ]
     },
     {
       "name": "3rd Team",
       "division": "Division 5",
-      "photo": "",
-      "description": "Team Description... EDIT IN CMS.",
+      "photo": "/images/uploads/3rd-team.jpg",
+      "description": "Hard graft. Big plays. Bringing the heat every game.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12840",
       "players": [
         {
-          "name": "Person Name",
+          "name": "Sarah Knighting",
           "position": "GS",
-          "isCaptain": true,
+          "isCaptain": false,
           "isViceCaptain": false,
           "photo": "",
           "bio": "Edit this in the CMS to add a bio."
         },
         {
-          "name": "Person Name",
+          "name": "Jasmine Lowrie",
           "position": "GA",
           "isCaptain": false,
-          "isViceCaptain": true,
-          "photo": "",
+          "isViceCaptain": false,
+          "photo": "/images/uploads/3rd-team-jasmine-lowrie.jpg",
           "bio": "Edit this in the CMS to add a bio."
         },
         {
-          "name": "Person Name",
+          "name": "Amelia Steadman",
+          "position": "GS",
+          "photo": "/images/uploads/3rd-team-amelia-steadman.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Annabel Broadbent",
+          "position": "GA",
+          "photo": "/images/uploads/3rd-team-annabel-broadbent.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Kate Stoddard",
           "position": "WA",
-          "photo": "",
+          "photo": "/images/uploads/3rd-team-kate-stoddard.jpg",
           "bio": "Edit this in the CMS to add a bio.",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
-          "position": "C",
-          "photo": "",
+          "name": "Lily Kitson",
+          "position": "WA / WD",
+          "photo": "/images/uploads/3rd-team-lily-kitson.jpg",
           "bio": "Edit this in the CMS to add a bio.",
-          "isViceCaptain": false,
-          "isCaptain": false
+          "isCaptain": false,
+          "isViceCaptain": false
         },
         {
-          "name": "Person Name",
-          "position": "WD",
-          "photo": "",
+          "name": "Sofia Walls",
+          "position": "C / WA",
+          "photo": "/images/uploads/3rd-team-sofia-walls.jpg",
           "bio": "Edit this in the CMS to add a bio.",
-          "isViceCaptain": false,
-          "isCaptain": false
+          "isCaptain": false,
+          "isViceCaptain": false
         },
         {
-          "name": "Person Name",
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Roseanne Pashley",
+          "position": "WA",
+          "photo": "/images/uploads/3rd-team-roseanne-pashley.jpg"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Grace Milner",
+          "position": "C"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Eva Waring",
+          "position": "WD / GD",
+          "photo": "/images/uploads/3rd-team-eva-waring.jpg"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": true,
+          "name": "Lauren Hawkhead",
+          "position": "WD / GD",
+          "photo": "/images/uploads/3rd-team-lauren-hawkhead.jpg"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Lucy Garthwaite",
           "position": "GD",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
-          "isCaptain": false,
-          "isViceCaptain": false
+          "photo": "/images/uploads/3rd-team-lucy-garthwaite.jpg"
         },
         {
-          "name": "Person Name",
+          "isCaptain": true,
+          "isViceCaptain": false,
+          "name": "Caroline Walker",
           "position": "GK",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
-          "isCaptain": false,
-          "isViceCaptain": false
+          "photo": "/images/uploads/3rd-team-caroline-walker.jpg"
         }
       ]
     },
     {
       "name": "4th Team",
       "division": "Division 6",
-      "photo": "",
-      "description": "Team Description... EDIT IN CMS.",
+      "photo": "/images/uploads/4th-team.jpg",
+      "description": "Full commitment. Fearless attitude. Phoenix through and through.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12841",
       "players": [
         {
-          "name": "Person Name",
+          "name": "Louise Napier",
           "position": "GS",
-          "isCaptain": true,
+          "isCaptain": false,
           "isViceCaptain": false,
-          "photo": "",
+          "photo": "/images/uploads/4th-team-louise-napier.jpg",
           "bio": "Edit this in the CMS to add a bio."
         },
         {
-          "name": "Person Name",
+          "name": "Sophie Doughty",
           "position": "GA",
           "isCaptain": false,
-          "isViceCaptain": true,
-          "photo": "",
+          "isViceCaptain": false,
+          "photo": "/images/uploads/4th-team-sophie-doughty.jpg",
           "bio": "Edit this in the CMS to add a bio."
         },
         {
-          "name": "Person Name",
+          "name": "Niamh Gombocz",
           "position": "WA",
-          "photo": "",
+          "photo": "/images/uploads/4th-team-niamh-gombocz.jpg",
           "bio": "Edit this in the CMS to add a bio.",
           "isViceCaptain": false,
           "isCaptain": false
         },
         {
-          "name": "Person Name",
-          "position": "C",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
-          "isViceCaptain": false,
-          "isCaptain": false
-        },
-        {
-          "name": "Person Name",
-          "position": "WD",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
-          "isViceCaptain": false,
-          "isCaptain": false
-        },
-        {
-          "name": "Person Name",
-          "position": "GD",
-          "photo": "",
-          "bio": "Edit this in the CMS to add a bio.",
-          "isViceCaptain": false,
-          "isCaptain": false
-        },
-        {
-          "name": "Person Name",
-          "position": "GK",
-          "photo": "",
+          "name": "Emily Rice",
+          "position": "WA",
+          "photo": "/images/uploads/4th-team-emily-rice.jpg",
           "bio": "Edit this in the CMS to add a bio.",
           "isCaptain": false,
           "isViceCaptain": false
+        },
+        {
+          "name": "Esme Ramsden",
+          "position": "C",
+          "photo": "/images/uploads/4th-team-esme-ramsden.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Yasmine Tempest",
+          "position": "C",
+          "photo": "/images/uploads/4th-team-yasmin-tempest.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "name": "Ester Sido",
+          "position": "GD / WD",
+          "photo": "/images/uploads/4th-team-esther-sido.jpg",
+          "bio": "Edit this in the CMS to add a bio.",
+          "isViceCaptain": false,
+          "isCaptain": false
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Thea Godson",
+          "position": "GD / GK",
+          "photo": "/images/uploads/4th-team-thea-godson.jpg"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Lillie Hardie",
+          "position": "GD",
+          "photo": "/images/uploads/4th-team-lillie-hardie.jpg"
+        },
+        {
+          "isCaptain": false,
+          "isViceCaptain": false,
+          "name": "Elsie Walters",
+          "position": "GK",
+          "photo": "/images/uploads/4th-team-elsie-walters.jpg"
         }
       ]
     }
