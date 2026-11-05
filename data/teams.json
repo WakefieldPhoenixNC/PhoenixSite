@@ -3,7 +3,7 @@
     {
       "name": "1st Team",
       "division": "Premier Division",
-      "photo": "/images/uploads/1st-team.jpg",
+      "photo": "/images/uploads/wakefield-phoenix-posts-2-.png",
       "description": "Big energy. Fierce competition. Unstoppable team spirit.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12835",
@@ -90,7 +90,7 @@
     {
       "name": "2nd Team",
       "division": "Division 3",
-      "photo": "/images/uploads/2nd-team.jpg",
+      "photo": "/images/uploads/wakefield-phoenix-posts-4-.png",
       "description": "Strong connections. Big ambitions. All-out determination.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12838",
@@ -177,7 +177,7 @@
     {
       "name": "3rd Team",
       "division": "Division 5",
-      "photo": "/images/uploads/3rd-team.jpg",
+      "photo": "/images/uploads/wakefield-phoenix-posts-1-.png",
       "description": "Hard graft. Big plays. Bringing the heat every game.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12840",
@@ -284,7 +284,7 @@
     {
       "name": "4th Team",
       "division": "Division 6",
-      "photo": "/images/uploads/4th-team.jpg",
+      "photo": "/images/uploads/wakefield-phoenix-posts-3-.png",
       "description": "Full commitment. Fearless attitude. Phoenix through and through.",
       "showLeagueTable": true,
       "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2067&did=12841",
