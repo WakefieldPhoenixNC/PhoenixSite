@@ -2,11 +2,13 @@
   "members": [
     {
       "name": "Eleanor Platt",
-      "role": "Chair"
+      "role": "Chair",
+      "photo": "/images/uploads/2nd-team-eleanor-platt.jpg"
     },
     {
       "name": "Nat Cudworth",
-      "role": "Vice Chair / Secretary"
+      "role": "Vice Chair / Secretary",
+      "photo": "/images/uploads/2nd-team-nat-cudworth.jpg"
     },
     {
       "name": "Lucy Grice",
@@ -14,39 +16,48 @@
     },
     {
       "name": "Sally Beckett",
-      "role": "TREASURER"
+      "role": "TREASURER",
+      "photo": "/images/uploads/1st-team-sally-cartwright.jpg"
     },
     {
       "name": "Kate Stoddard",
-      "role": "AFFILIATIONS"
+      "role": "AFFILIATIONS",
+      "photo": "/images/uploads/3rd-team-kate-stoddard.jpg"
     },
     {
       "name": "Caroline Walker",
-      "role": "U14 CO-ORD"
+      "role": "U14 CO-ORD",
+      "photo": "/images/uploads/3rd-team-caroline-walker.jpg"
     },
     {
       "name": "Taylor Booth",
-      "role": "VENUES/KIT"
+      "role": "VENUES/KIT",
+      "photo": "/images/uploads/1st-team-taylor-booth.jpg"
     },
     {
       "name": "Charlie Davison-Ward",
-      "role": "FUNDRAISING"
+      "role": "FUNDRAISING",
+      "photo": "/images/uploads/1st-team-charley-davison-ward.jpg"
     },
     {
       "name": "Kelsie Clune",
-      "role": "FUNDRAISING"
+      "role": "FUNDRAISING",
+      "photo": "/images/uploads/1st-team-kelsie-clune.jpg"
     },
     {
       "name": "Katy Potts",
-      "role": "SOCIAL SEC"
+      "role": "SOCIAL SEC",
+      "photo": "/images/uploads/1st-team-katy-potts.jpg"
     },
     {
       "name": "Lauren Hawkhead",
-      "role": "SOCIAL MEDIA"
+      "role": "SOCIAL MEDIA",
+      "photo": "/images/uploads/3rd-team-lauren-hawkhead.jpg"
     },
     {
       "name": "Emily Garner",
-      "role": "DEV OFFICER / UMPIRE CO-ORD"
+      "role": "DEV OFFICER / UMPIRE CO-ORD",
+      "photo": "/images/uploads/1st-team-emily-garner.jpg"
     },
     {
       "name": "Diane Hampsire",
