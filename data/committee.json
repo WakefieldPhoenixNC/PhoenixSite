@@ -12,7 +12,8 @@
     },
     {
       "name": "Lucy Grice",
-      "role": "JNR VICE CHAIR / JNR REP"
+      "role": "JNR VICE CHAIR / JNR REP",
+      "photo": "/images/uploads/wakefield-phoenix-posts.jpg"
     },
     {
       "name": "Sally Beckett",
@@ -61,11 +62,13 @@
     },
     {
       "name": "Diane Hampsire",
-      "role": "CLUB SAFEGUARDING"
+      "role": "CLUB SAFEGUARDING",
+      "photo": "/images/uploads/wakefield-phoenix-posts.jpg"
     },
     {
       "name": "Rachel Miller",
-      "role": "HEAD COACH"
+      "role": "HEAD COACH",
+      "photo": "/images/uploads/wakefield-phoenix-posts.jpg"
     }
   ]
 }
