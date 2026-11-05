@@ -101,7 +101,7 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "photo": "/images/uploads/2nd-team-anisha-barmade.jpg",
-          "bio": "Edit this in the CMS to add a bio."
+          "bio": ""
         },
         {
           "name": "Natalie Morris",
@@ -109,13 +109,13 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "photo": "/images/uploads/2nd-team-tilly-morris.jpg",
-          "bio": "Edit this in the CMS to add a bio."
+          "bio": ""
         },
         {
           "name": "Mollie Martin",
           "position": "GS",
           "photo": "/images/uploads/2nd-team-mollie-martin.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": true
         },
@@ -123,7 +123,7 @@
           "name": "Eleanor Platt",
           "position": "WA",
           "photo": "/images/uploads/2nd-team-eleanor-platt.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -131,7 +131,7 @@
           "name": "Nat Cudworth",
           "position": "WA / WD",
           "photo": "/images/uploads/2nd-team-nat-cudworth.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -139,7 +139,7 @@
           "name": "Naomi Hampshire",
           "position": "C",
           "photo": "/images/uploads/2nd-team-naomi-hampshire.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -147,7 +147,7 @@
           "name": "Izzy Lindley",
           "position": "WD / GD",
           "photo": "/images/uploads/2nd-team-izzy-lindley.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -188,7 +188,7 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "photo": "",
-          "bio": "Edit this in the CMS to add a bio."
+          "bio": ""
         },
         {
           "name": "Jasmine Lowrie",
@@ -196,13 +196,13 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "photo": "/images/uploads/3rd-team-jasmine-lowrie.jpg",
-          "bio": "Edit this in the CMS to add a bio."
+          "bio": ""
         },
         {
           "name": "Amelia Steadman",
           "position": "GS",
           "photo": "/images/uploads/3rd-team-amelia-steadman.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -210,7 +210,7 @@
           "name": "Annabel Broadbent",
           "position": "GA",
           "photo": "/images/uploads/3rd-team-annabel-broadbent.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -218,7 +218,7 @@
           "name": "Kate Stoddard",
           "position": "WA",
           "photo": "/images/uploads/3rd-team-kate-stoddard.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -226,7 +226,7 @@
           "name": "Lily Kitson",
           "position": "WA / WD",
           "photo": "/images/uploads/3rd-team-lily-kitson.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isCaptain": false,
           "isViceCaptain": false
         },
@@ -234,7 +234,7 @@
           "name": "Sofia Walls",
           "position": "C / WA",
           "photo": "/images/uploads/3rd-team-sofia-walls.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isCaptain": false,
           "isViceCaptain": false
         },
@@ -295,7 +295,7 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "photo": "/images/uploads/4th-team-louise-napier.jpg",
-          "bio": "Edit this in the CMS to add a bio."
+          "bio": ""
         },
         {
           "name": "Sophie Doughty",
@@ -303,13 +303,13 @@
           "isCaptain": false,
           "isViceCaptain": false,
           "photo": "/images/uploads/4th-team-sophie-doughty.jpg",
-          "bio": "Edit this in the CMS to add a bio."
+          "bio": ""
         },
         {
           "name": "Niamh Gombocz",
           "position": "WA",
           "photo": "/images/uploads/4th-team-niamh-gombocz.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -317,7 +317,7 @@
           "name": "Emily Rice",
           "position": "WA",
           "photo": "/images/uploads/4th-team-emily-rice.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isCaptain": false,
           "isViceCaptain": false
         },
@@ -325,7 +325,7 @@
           "name": "Esme Ramsden",
           "position": "C",
           "photo": "/images/uploads/4th-team-esme-ramsden.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -333,7 +333,7 @@
           "name": "Yasmine Tempest",
           "position": "C",
           "photo": "/images/uploads/4th-team-yasmin-tempest.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
@@ -341,7 +341,7 @@
           "name": "Ester Sido",
           "position": "GD / WD",
           "photo": "/images/uploads/4th-team-esther-sido.jpg",
-          "bio": "Edit this in the CMS to add a bio.",
+          "bio": "",
           "isViceCaptain": false,
           "isCaptain": false
         },
