@@ -1,7 +1,36 @@
 {
   "teams": [
-    { "name": "U16", "division": "Division 1", "description": "Team Description... EDIT IN CMS.", "showLeagueTable": true, "leagueTableUrl": "" },
-    { "name": "U14", "division": "Division 1", "description": "Team Description... EDIT IN CMS.", "showLeagueTable": true, "leagueTableUrl": "" },
-    { "name": "U12", "division": "Division 1", "description": "Team Description... EDIT IN CMS.", "showLeagueTable": true, "leagueTableUrl": "" }
+    {
+      "name": "U16 1s",
+      "division": "Division A",
+      "description": "",
+      "showLeagueTable": true,
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2223&did=13747"
+    },
+    {
+      "showLeagueTable": true,
+      "name": "U16 2s",
+      "division": "Division D",
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2223&did=13744"
+    },
+    {
+      "name": "U14 2s",
+      "division": "Division B",
+      "description": "",
+      "showLeagueTable": true,
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2223&did=13750"
+    },
+    {
+      "showLeagueTable": true,
+      "name": "U14 2s",
+      "division": "Division C",
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2223&did=13749"
+    },
+    {
+      "showLeagueTable": true,
+      "name": "U14 3s",
+      "division": "Division D",
+      "leagueTableUrl": "https://clubleague.azurewebsites.net/Public/Portal/ViewDivision.aspx?cid=2223&did=13748"
+    }
   ]
 }
