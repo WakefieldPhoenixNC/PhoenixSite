@@ -83,7 +83,29 @@ function applyFillsToHtml(html, fills) {
   return html;
 }
 
-function buildPage(html, options = {}) {
+// Link previews (WhatsApp, Facebook, iMessage and so on) read these tags:
+// the page's own title and description, plus the club's share picture.
+// The title and description are already escaped, as they came from the page.
+const SITE = 'https://wakefieldphoenixnc.co.uk';
+function addShareTags(html, pagePath) {
+  const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '';
+  const description = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '';
+  const tags = [
+    ['og:type', 'website'],
+    ['og:site_name', 'Wakefield Phoenix Netball Club'],
+    ['og:title', title],
+    ['og:description', description],
+    ['og:url', SITE + pagePath],
+    ['og:image', `${SITE}/images/share.jpg`],
+    ['og:image:width', '1200'],
+    ['og:image:height', '630'],
+    ['og:image:alt', 'Wakefield Phoenix Netball Club crest']
+  ].map(([name, value]) => `<meta property="${name}" content="${value}">`);
+  tags.push('<meta name="twitter:card" content="summary_large_image">');
+  return html.replace('</head>', () => `${tags.join('\n')}\n</head>`);
+}
+
+function buildPage(html, pagePath, options = {}) {
   const fills = contentFills(data, {
     has: id => html.includes(`id="${id}"`),
     playersHref: slug => `/players/${slug}.html`,
@@ -91,7 +113,8 @@ function buildPage(html, options = {}) {
     ...options
   });
   // data-built tells main.js the content is already in the page.
-  return applyFillsToHtml(html, fills).replace(/<html\b([^>]*)>/, (tag, attrs) => `<html${attrs} data-built>`);
+  const built = applyFillsToHtml(html, fills).replace(/<html\b([^>]*)>/, (tag, attrs) => `<html${attrs} data-built>`);
+  return addShareTags(built, pagePath);
 }
 
 fs.rmSync(OUT, { recursive: true, force: true });
@@ -105,14 +128,14 @@ for (const name of fs.readdirSync('.')) {
 // ?team=..., so any old link to it keeps working.
 const pages = fs.readdirSync('.').filter(name => name.endsWith('.html') && name !== 'players.html');
 for (const name of pages) {
-  fs.writeFileSync(path.join(OUT, name), buildPage(fs.readFileSync(name, 'utf8')));
+  fs.writeFileSync(path.join(OUT, name), buildPage(fs.readFileSync(name, 'utf8'), name === 'index.html' ? '/' : `/${name}`));
 }
 
 const playersPage = fs.readFileSync('players.html', 'utf8');
 const teamSlugs = (data.teams.teams || []).map(t => slugify(t.name)).filter(Boolean);
 fs.mkdirSync(path.join(OUT, 'players'));
 for (const slug of teamSlugs) {
-  fs.writeFileSync(path.join(OUT, 'players', `${slug}.html`), buildPage(playersPage, { teamSlug: slug }));
+  fs.writeFileSync(path.join(OUT, 'players', `${slug}.html`), buildPage(playersPage, `/players/${slug}.html`, { teamSlug: slug }));
 }
 
 console.log(`Built ${pages.length} pages and ${teamSlugs.length} team pages into ${OUT}/`);
