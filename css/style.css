@@ -1251,7 +1251,7 @@ a.sponsor:hover {
 .back-to-top {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  left: 24px; /* left, so Netlify's "Powered by Netlify" badge on the right never covers it */
   width: 46px;
   height: 46px;
   border-radius: 50%;
