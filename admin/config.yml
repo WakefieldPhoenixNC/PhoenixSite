@@ -27,7 +27,7 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 900 × 1200px, portrait (a headshot or selfie works well) — it'll be cropped to that shape automatically." }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Portrait works best (a headshot or selfie). It's cropped to shape automatically, and shrunk as it uploads, so a photo straight off a phone is fine.", media_processing: { enabled: true, format: { enabled: true, default: "jpeg" }, quality: 80, strip_metadata: true, width: 1200 } }
               - { label: "Short bio", name: "bio", widget: "text", required: false }
 
   - name: "teams"
@@ -44,7 +44,7 @@ collections:
             fields:
               - { label: "Team name", name: "name", widget: "string" }
               - { label: "Division / league", name: "division", widget: "string" }
-              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 1600 × 900px, landscape (a wide team/group photo works well) — it'll be cropped to that shape automatically." }
+              - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Landscape works best (a wide team or group photo). It's cropped to shape automatically, and shrunk as it uploads, so a photo straight off a phone is fine.", media_processing: { enabled: true, format: { enabled: true, default: "jpeg" }, quality: 80, strip_metadata: true, width: 2000 } }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Show a league table button?", name: "showLeagueTable", widget: "boolean", required: false, default: false }
               - { label: "League table link (only used if the box above is ticked)", name: "leagueTableUrl", widget: "string", required: false, hint: "Paste the exact West Yorkshire Netball results page URL for this team's division." }
@@ -58,7 +58,7 @@ collections:
                   - { label: "Position(s)", name: "position", widget: "string", required: false, hint: "Write it however you like — e.g. \"C\", \"Centre\", or \"C / WD\" for someone who covers more than one." }
                   - { label: "Captain?", name: "isCaptain", widget: "boolean", required: false, default: false, hint: "Adds a \"C\" armband badge to their photo, and (C) after their name." }
                   - { label: "Vice-Captain?", name: "isViceCaptain", widget: "boolean", required: false, default: false, hint: "Adds a \"VC\" armband badge to their photo, and (VC) after their name." }
-                  - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Recommended size: 900 × 1200px, portrait (a headshot or selfie works well) — it'll be cropped to that shape automatically." }
+                  - { label: "Photo", name: "photo", widget: "image", required: false, hint: "Portrait works best (a headshot or selfie). It's cropped to shape automatically, and shrunk as it uploads, so a photo straight off a phone is fine.", media_processing: { enabled: true, format: { enabled: true, default: "jpeg" }, quality: 80, strip_metadata: true, width: 1200 } }
                   - { label: "About", name: "bio", widget: "text", required: false }
 
   - name: "kit"
